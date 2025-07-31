@@ -72,7 +72,7 @@ const Login = async (req, res) => {
     ///WHERE AM RETURNING THE DATA IF SUCCESSFUL
 
     res.status(200).json({
-      message: "Lgin successful",
+      message: "Login successful",
       _id: checkUser._id,
       firstName: checkUser.firstName,
       lastName: checkUser.lastName,
