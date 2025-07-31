@@ -3,6 +3,7 @@ const dotenv = require("dotenv").config();
 const colors = require("colors");
 // import express from "express"
 const taskRoutes = require("./Routes/TaskRoutes");
+const userRoutes = require("./Routes/UserRoute");
 const connectDB = require("./Config/db");
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -15,7 +16,7 @@ server.use(cors());
 const jsonParser = bodyParser.json();
 server.use(jsonParser);
 server.use("/Task", taskRoutes);
-
+server.use("/api/User", userRoutes);
 // const studentInfo = [
 //   {
 //     "id": 1,
