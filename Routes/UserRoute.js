@@ -1,8 +1,9 @@
 const express = require("express");
-const {SignUp} = require("../Controllers/UserController");
+const {SignUp, Login} = require("../Controllers/UserController");
 
 const router = express.Router();
 router.post("/", SignUp);
+router.post("/login", Login);
 
 // router.get("/", GetAllTask);
 // router.get("/:id", GetSingleTask);

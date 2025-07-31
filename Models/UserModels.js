@@ -21,11 +21,11 @@ const UserSchema = mongoose.Schema(
       required: true,
     },
 
-    userInfo: {
-      type: String,
-      country: String,
-      state: String,
-    },
+    // userInfo: {
+    //   type: String,
+    //   country: String,
+    //   state: String,
+    // },
     email: {
       type: String,
       required: true,
@@ -35,7 +35,7 @@ const UserSchema = mongoose.Schema(
       required: true,
     },
     phone: {
-      type: Number,
+      type: String,
       required: true,
     },
   },
