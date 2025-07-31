@@ -1,11 +1,10 @@
 const UserModels = require("../Models/UserModels");
 
 const SignUp = async (req, res) => {
-  const {password, firstName, lastName, userInfo, email, userName, phone} =
-    req.body;
+  const {password, firstName, lastName, email, userName, phone} = req.body;
   try {
     /// TO CHECK IF TASK EXIST IN OUR DB UNDER TASK COLLECTION
-    const userExist = await UserModels.findOne({email, userName, password});
+    const userExist = await UserModels.findOne({email});
     if (userExist) {
       return res.status(405).json({
         message: "User already exixts",
@@ -13,11 +12,10 @@ const SignUp = async (req, res) => {
     }
 
     /// TO CREATE A NEW TASK
-    const creatNewUser = await userModel.create({
+    const creatNewUser = await new UserModels({
       password,
       firstName,
       lastName,
-      userInfo,
       email,
       userName,
       phone,
@@ -35,7 +33,6 @@ const SignUp = async (req, res) => {
       password: taskResult.password,
       firstName: taskResult.firstName,
       lastName: taskResult.lastName,
-      userInfo: taskResult.userInfo,
       email: taskResult.email,
       userName: taskResult.userName,
       phone: taskResult.phone,

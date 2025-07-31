@@ -16,7 +16,7 @@ server.use(cors());
 const jsonParser = bodyParser.json();
 server.use(jsonParser);
 server.use("/Task", taskRoutes);
-server.use("/api/User", userRoutes);
+server.use("/User", userRoutes);
 // const studentInfo = [
 //   {
 //     "id": 1,

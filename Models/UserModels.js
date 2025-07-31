@@ -3,17 +3,12 @@ const bcrypt = require("bcryptjs");
 const UserSchema = mongoose.Schema(
   {
     ///// title is an example of a data field structure
-    title: {
-      type: String,
-      required: true,
-    },
 
     password: {
       type: String,
       required: true,
-      minLength: [8, "Minimum lenght should be more than  letter words"],
-      maxLength: [15, "Maximum length should not exceed 15 words"],
-      unique: true,
+      // minLength: [8, "Minimum lenght should be more than  letter words"],
+      // maxLength: [15, "Maximum length should not exceed 15 words"],
     },
 
     firstName: {
@@ -30,23 +25,18 @@ const UserSchema = mongoose.Schema(
       type: String,
       country: String,
       state: String,
-      required: true,
     },
     email: {
       type: String,
       required: true,
-      unique: true,
     },
     userName: {
       type: String,
       required: true,
-      unique: true,
-      minLength: [5, "Minimum length should be more than 5 characters"],
     },
     phone: {
       type: Number,
       required: true,
-      unique: true,
     },
   },
 
